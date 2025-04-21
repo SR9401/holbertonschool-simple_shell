@@ -70,12 +70,12 @@ $
 ## *Man Page*
 
 1. **Make sure the man page file is in the project directory**:  
-   The **`man_simple_shell`** file should be present in your project directory. If this file is there, you can access it directly.
+   The **`man_1_simple_shell`** file should be present in your project directory. If this file is there, you can access it directly.
 
 2. **Open the man page**:  
    You can open the man page by running the following command:
    ```sh
-   $ man ./man_simple_shell
+   $ man ./man_1_simple_shell
    ```
 
 ## *Flowchart*
