@@ -15,22 +15,27 @@ int main(void)
 	size_t len = 0;
 	char *argv[10];
 
-	printf("$ ");
-	while (getline(&line, &len, stdin) != EOF)
+	while (1)
 	{
 		printf("$ ");
-		arg(line, argv);
+		while (getline(&line, &len, stdin) != EOF)
+		{
+			arg(line, argv);
 
-		if (argv[0] == NULL)
-		{
-			continue;
+			if (argv[0] == NULL)
+			{
+				continue;
+			}
+			if (strcmp(argv[0], "exit") == 0)
+			{
+				free(line);
+				return (0);
+			}
+			get_path(argv[0], argv);
+			printf("$ ");
 		}
-		if (strcmp(argv[0], "exit") == 0)
-		{
-			free(line);
-			return (0);
-		}
-		get_path(argv[0], argv);
+		printf("\n");
+		return (0);
 	}
 	free(line);
 	return (0);

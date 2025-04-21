@@ -5,7 +5,7 @@
  * This function retrieves the PATH environment variable, splits it into
  * individual directories, and appends the command name to each directory
  * to construct a full executable path. If the command is found and is
- * executable, it is executed.
+ * executable, it is executed via execute_command().
  * If the command is not found in any PATH directory,
  * an error message is printed.
  *
