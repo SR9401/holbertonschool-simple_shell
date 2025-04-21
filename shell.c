@@ -15,10 +15,10 @@ int main(void)
 	size_t len = 0;
 	char *argv[10];
 
-	while (1)
+	printf("$ ");
+	while (getline(&line, &len, stdin) != EOF)
 	{
 		printf("$ ");
-		getline(&line, &len, stdin);
 		arg(line, argv);
 
 		if (argv[0] == NULL)

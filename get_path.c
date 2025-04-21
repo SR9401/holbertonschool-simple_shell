@@ -5,7 +5,7 @@
  * This function retrieves the PATH environment variable, splits it into
  * individual directories, and appends the command name to each directory
  * to construct a full executable path. If the command is found and is
- * executable, it is executed via execute_command().
+ * executable, it is executed.
  * If the command is not found in any PATH directory,
  * an error message is printed.
  *
@@ -21,6 +21,14 @@ char **get_path(const char *cmd, char **argv)
 	int i;
 	char full_path[1024];
 
+	if (cmd[0] == '/')
+	{
+		if (access(cmd, X_OK) == 0)
+		{
+			execute_command(argv, cmd);
+			return (NULL);
+		}
+	}
 	if (path == NULL)
 	{
 		printf("PATH is empty!\n");
