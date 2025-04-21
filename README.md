@@ -69,7 +69,17 @@ $
 
 ## *Man Page*
 
+To view the man page locally in the terminal:
+```
+
+```
+
 ## *Flowchart*
+
+<div align="center">
+  <img src="Image/Flowchart_Simple_Shell.jpg" alt="Flowchart du Shell" width="400"/>
+</div>
+
 
 ## *Authors*
 
