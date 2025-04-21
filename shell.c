@@ -14,22 +14,17 @@ int main(void)
 	char *line = NULL;
 	size_t len = 0;
 	char *argv[10];
-	int i = 0;
-	char *token;
 
 	while (1)
 	{
 		printf("$ ");
 		getline(&line, &len, stdin);
-		token = strtok(line, "\n");
+		arg(line, argv);
 
-		for (; token != NULL ;)
+		if (argv[0] == NULL)
 		{
-			argv[i++] = token;
-			token = strtok(NULL, "\n");
+			continue;
 		}
-		argv[i] = NULL;
-
 		if (strcmp(argv[0], "exit") == 0)
 		{
 			free(line);
