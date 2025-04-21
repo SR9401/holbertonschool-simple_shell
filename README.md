@@ -24,7 +24,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
 ## *Requiements*
 
-The project was developped and tested in the following environment: 
+The project was developped and tested in the following environment:
 - Ubuntu 20.04 LTS
 - GCC (GNU Compiler Collection)
 - Git for source code management
@@ -51,7 +51,7 @@ Run the shell:
 juleslgc@VENTURA:~/holbertonschool-simple_shell$ ./hsh
 $ ls
 fork_exec_wait.c  main.h  mypid   pid.c   av.c  exec.c  find_path.c
-$ 
+$
 ```
 ```sh
 $ ls -la
@@ -64,15 +64,15 @@ drwxr-xr-x 8 SR9401 juleslgc  4096 Apr 19 17:13 .git
 -rw-r--r-- 1 SR9401 juleslgc   769 Apr 19 17:05 _getenv.c
 -rw-r--r-- 1 SR9401 juleslgc   588 Apr 21 10:42 arg.c
 drwxr-xr-x 2 SR9401 juleslgc  4096 Apr 21 10:04 test
-$ 
+$
 ```
 
 ## *Man Page*
 
-1. **Make sure the man page file is in the project directory**:  
+1. **Make sure the man page file is in the project directory**:
    The **`man_1_simple_shell`** file should be present in your project directory. If this file is there, you can access it directly.
 
-2. **Open the man page**:  
+2. **Open the man page**:
    You can open the man page by running the following command:
    ```sh
    $ man ./man_1_simple_shell
@@ -87,6 +87,6 @@ $
 
 ## *Authors*
 
-[Shakib ROJAS](https://github.com/SR9401) 
+[Shakib ROJAS](https://github.com/SR9401)
 &
 [Jules VENTURA](https://github.com/Juleslgc)
