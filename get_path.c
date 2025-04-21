@@ -11,7 +11,7 @@
  *
  * @cmd: The name of the command to search for (e.g., "ls", "echo").
  * @argv: An array of strings representing the command and its arguments.
- *
+ * @name: The name of the program.
  * Return: Always returns NULL.
  */
 char **get_path(const char *cmd, char **argv, char *name)
@@ -31,7 +31,7 @@ char **get_path(const char *cmd, char **argv, char *name)
 	}
 	if (path == NULL)
 	{
-		printf("PATH is empty!\n");
+		fprintf(stderr, "PATH is empty!\n");
 		return (NULL);
 	}
 	for (i = 0; token[i] != NULL; i++)
@@ -45,9 +45,6 @@ char **get_path(const char *cmd, char **argv, char *name)
 			return (NULL);
 		}
 	}
-	if (access(full_path, X_OK) == -1)
-	{
-		fprintf(stderr, "%s: 1: %s: command not found\n", name, cmd);
-	}
+	fprintf(stderr, "%s: 1: %s: command not found\n", name, cmd);
 	return (NULL);
 }

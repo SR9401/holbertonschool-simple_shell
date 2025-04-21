@@ -5,7 +5,8 @@
  * Displays a prompt, reads user input, tokenizes the input,
  * and executes the command using get_path. Supports the "exit"
  * command to terminate the shell gracefully.
- *
+ * @ac: Argument count (unused).
+ * @av: Argument vector (used to get program name).
  * Return: Always returns 0.
  */
 
