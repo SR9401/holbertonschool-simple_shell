@@ -9,34 +9,39 @@
  * Return: Always returns 0.
  */
 
-int main(void)
+int main(int ac, char **av)
 {
 	char *line = NULL;
 	size_t len = 0;
 	char *argv[10];
+	char *name = av[0];
+	(void)ac;
 
 	while (1)
 	{
-		printf("$ ");
-		while (getline(&line, &len, stdin) != EOF)
+		if (isatty(STDIN_FILENO))
 		{
-			arg(line, argv);
-
-			if (argv[0] == NULL)
-			{
-				continue;
-			}
-			if (strcmp(argv[0], "exit") == 0)
-			{
-				free(line);
-				return (0);
-			}
-			get_path(argv[0], argv);
 			printf("$ ");
 		}
-		printf("\n");
-		free(line);
-		return (0);
+		if (getline(&line, &len, stdin) == -1)
+		{
+			if (isatty(STDIN_FILENO))
+			{
+				printf("\n");
+			}
+			free(line);
+			return (0);
+		}
+		arg(line, argv);
+		if (argv[0] == NULL)
+		{
+			continue;			}
+		if (strcmp(argv[0], "exit") == 0)
+		{
+			free(line);
+			return (0);
+		}
+		get_path(line, argv, name);
 	}
 	free(line);
 	return (0);

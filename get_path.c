@@ -14,7 +14,7 @@
  *
  * Return: Always returns NULL.
  */
-char **get_path(const char *cmd, char **argv)
+char **get_path(const char *cmd, char **argv, char *name)
 {
 	char *path = _getenv("PATH");
 	char **token = split_string(path, ":");
@@ -47,7 +47,7 @@ char **get_path(const char *cmd, char **argv)
 	}
 	if (access(full_path, X_OK) == -1)
 	{
-		printf("%s: command not found\n", cmd);
+		fprintf(stderr, "%s: 1: %s: command not found\n", name, cmd);
 	}
 	return (NULL);
 }
