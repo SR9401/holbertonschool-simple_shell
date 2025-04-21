@@ -35,6 +35,7 @@ int main(void)
 			printf("$ ");
 		}
 		printf("\n");
+		free(line);
 		return (0);
 	}
 	free(line);
