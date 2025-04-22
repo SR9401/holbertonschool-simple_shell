@@ -1,10 +1,11 @@
 #include "shell.h"
 /**
- *free_token - functions for free memory of token.
+ * free_token - Frees a NULL-terminated array of strings.
+ * @token: The array of strings to be freed.
  *
- *@token: string
- *
- *Return: always 0
+ * This function iterates through a NULL-terminated array of dynamically
+ * allocated strings, frees each string, and then frees the array itself.
+ * Return: 0 on success, 1 if the input is NULL.
  */
 
 int free_token(char **token)
@@ -23,4 +24,3 @@ int free_token(char **token)
 	free(token);
 	return (0);
 }
-
