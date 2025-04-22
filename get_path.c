@@ -25,13 +25,14 @@ char **get_path(const char *cmd, char **argv, char *name)
 	strncmp(cmd, "../", 3) == 0)
 	{
 		if (access(cmd, X_OK) == 0)
-		{
-			free(path);
+		{	free(path);
 			free_token(token);
 			execute_command(argv, cmd);
 			return (NULL);
 		}
 	}
+	if (strcmp(cmd, "env") == 0)
+	{ print_env(); }
 	if (token == NULL)
 	{	free(path);
 		return (NULL); }

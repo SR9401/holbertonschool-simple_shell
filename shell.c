@@ -42,10 +42,6 @@ int main(int ac, char **av)
 			free(line);
 			return (0);
 		}
-		if (strcmp(argv[0], "env") == 0)
-		{
-			print_env();
-		}
 		get_path(line, argv, name);
 	}
 	free(line);
