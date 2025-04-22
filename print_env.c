@@ -3,10 +3,10 @@
 /**
 *print_env - functions for print env
 *
-*Return: always 0
+*Return: always void
 **/
 
-int print_env(void)
+void print_env(void)
 {
 int i = 0;
 
@@ -15,5 +15,4 @@ int i = 0;
 		printf("%s\n", environ[i]);
 		i++;
 	}
-return (0);
 }
