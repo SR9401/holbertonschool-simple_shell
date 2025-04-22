@@ -25,15 +25,18 @@ char **get_path(const char *cmd, char **argv, char *name)
 	{
 		if (access(cmd, X_OK) == 0)
 		{
+			free(path);
+			free_token(token);
 			execute_command(argv, cmd);
 			return (NULL);
 		}
 	}
+	if (token == NULL)
+	{	free(path);
+		return (NULL); }
 	if (path == NULL)
-	{
-		fprintf(stderr, "PATH is empty!\n");
-		return (NULL);
-	}
+	{	fprintf(stderr, "PATH is empty!\n");
+		return (NULL); }
 	for (i = 0; token[i] != NULL; i++)
 	{
 		strcpy(full_path, token[i]);
@@ -41,10 +44,14 @@ char **get_path(const char *cmd, char **argv, char *name)
 		strcat(full_path, cmd);
 		if (access(full_path, X_OK) == 0)
 		{
+			free(path);
+			free_token(token);
 			execute_command(argv, full_path);
 			return (NULL);
 		}
 	}
 	fprintf(stderr, "%s: 1: %s: command not found\n", name, cmd);
+	free(path);
+	free_token(token);
 	return (NULL);
 }

@@ -13,7 +13,8 @@ char *_getenv(const char *name)
 {
 	int i;
 	char *copy = NULL;
-	char *token, *value;
+	char *token;
+	char *value;
 
 	for (i = 0 ; environ[i] != NULL ; i++)
 	{

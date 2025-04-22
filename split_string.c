@@ -16,8 +16,9 @@ char **split_string(char *str, const char *delim)
 	size_t count = 0;
 	char **result_tmp;
 
-	if (result == NULL)
+	if (result == NULL || copy_str == NULL)
 	{
+		free(result);
 		free(copy_str);
 		return (NULL);
 	}
@@ -30,6 +31,7 @@ char **split_string(char *str, const char *delim)
 			result_tmp = realloc(result, capacity * sizeof(char *));
 			if (result_tmp == NULL)
 			{
+				free(result);
 				free(copy_str);
 				return (NULL);
 			}
