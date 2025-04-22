@@ -5,7 +5,6 @@
  *
  * This function iterates through a NULL-terminated array of dynamically
  * allocated strings, frees each string, and then frees the array itself.
- * 
  * Return: 0 on success, 1 if the input is NULL.
  */
 
