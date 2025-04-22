@@ -31,8 +31,6 @@ char **get_path(const char *cmd, char **argv, char *name)
 			return (NULL);
 		}
 	}
-	if (strcmp(cmd, "env") == 0)
-	{ print_env(); }
 	if (token == NULL)
 	{	free(path);
 		return (NULL); }
