@@ -8,11 +8,11 @@
 
 void print_env(void)
 {
-int i = 0;
+char **env = environ;
 
-	while (environ[i] != NULL)
+    while (*env != NULL)
 	{
-		printf("%s\n", environ[i]);
-		i++;
+		printf("%s\n", *env);
+		env++;
 	}
 }
