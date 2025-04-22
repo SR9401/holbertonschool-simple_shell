@@ -17,6 +17,7 @@ void execute_command(char **argv, const char *full_path);
 char **get_path(const char *cmd, char **argv, char *name);
 void arg(char *line, char **argv);
 int free_token(char **token);
+int print_env(void);
 
 #endif
 

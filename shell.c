@@ -10,6 +10,7 @@
  * Return: Always returns 0.
  */
 
+
 int main(int ac, char **av)
 {
 	char *line = NULL;
@@ -35,15 +36,19 @@ int main(int ac, char **av)
 		}
 		arg(line, argv);
 		if (argv[0] == NULL)
-		{
-			continue;			}
+		{ continue; }
 		if (strcmp(argv[0], "exit") == 0)
 		{
 			free(line);
 			return (0);
+		}
+		if (strcmp(argv[0], "env") == 0)
+		{
+			print_env();
 		}
 		get_path(line, argv, name);
 	}
 	free(line);
 	return (0);
 }
+
