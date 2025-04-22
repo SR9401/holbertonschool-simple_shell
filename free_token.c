@@ -1,6 +1,10 @@
 #include "shell.h"
 /**
- * 
+ *free_token - functions for free memory of token.
+ *
+ *@token: string
+ *
+ *Return: always 0
  */
 
 int free_token(char **token)
@@ -19,3 +23,4 @@ int free_token(char **token)
 	free(token);
 	return (0);
 }
+
