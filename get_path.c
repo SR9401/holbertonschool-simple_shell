@@ -21,7 +21,8 @@ char **get_path(const char *cmd, char **argv, char *name)
 	int i;
 	char full_path[1024];
 
-	if (cmd[0] == '/')
+	if (cmd[0] == '/' || strncmp(cmd, "./", 2) == 0 ||
+	strncmp(cmd, "../", 3) == 0)
 	{
 		if (access(cmd, X_OK) == 0)
 		{
