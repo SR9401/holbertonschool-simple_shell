@@ -1,0 +1,106 @@
+.TH SIMPLE_SHELL 1 "April 2025" "Version 1.0" "Simple Shell Manual"
+
+.SH NAME
+hsh \- a lightweight custom Unix command-line shell
+
+.SH SYNOPSIS
+.B hsh
+.RI [ no\ arguments ]
+
+.SH DESCRIPTION
+.B Simple Shell
+is a minimalist Unix-like command-line shell written in C. It provides a command-line interface where users can execute basic built-in commands and external programs found in the system's PATH.
+
+This shell supports:
+.PP
+.IP \[bu] 2
+Built-in commands such as:
+.RS
+.TP
+\fBexit\fR \- Exit the shell
+.TP
+\fBenv\fR \- Display the environment variables
+.RE
+
+.IP \[bu] 2
+Execution of external commands:
+.RS
+.TP
+\fBls\fR (\fB-l\fR, \fB-a\fR, \fB-la\fR)
+.TP
+\fBpwd\fR
+.TP
+\fBcat\fR
+.RE
+
+To exit the shell, use \fBexit\fR or press \fICTRL+D\fR.
+
+.SH FEATURES
+The shell includes:
+.IP \[bu] 2
+Interactive and non-interactive modes
+.IP \[bu] 2
+Parsing of user input
+.IP \[bu] 2
+Execution of commands via \fBfork()\fR and \fBexecve()\fR
+.IP \[bu] 2
+PATH resolution for external commands
+.IP \[bu] 2
+Basic error handling and memory management
+
+.SH COMPILATION
+To compile the program:
+
+.EX
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+.EE
+
+.SH USAGE
+Run the shell after compilation:
+
+.EX
+./hsh
+.EE
+
+.SH EXAMPLES
+.EX
+$ ./hsh
+$ ls
+file1.c  main.c  README.md
+$ ls -la
+drwxr-xr-x 3 user user 4096 Apr 21 10:52 .
+$ pwd
+/home/user/simple_shell
+$ exit
+.EE
+
+.SH INSTALLATION
+Clone the repository and compile the source code:
+
+.EX
+git clone https://github.com/SR9401/holbertonschool-simple_shell.git
+cd holbertonschool-simple_shell
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+.EE
+
+.SH REQUIREMENTS
+This shell was developed and tested in the following environment:
+
+.IP \[bu] 2
+Ubuntu 20.04 LTS
+.IP \[bu] 2
+GCC (GNU Compiler Collection)
+.IP \[bu] 2
+Git
+
+.SH NOTES
+This shell is intended as a learning project and does not support advanced shell features such as piping, redirection, or job control.
+
+To check for memory leaks, use tools like \fBValgrind\fR.
+
+.SH AUTHORS
+Shakib ROJAS <https://github.com/SR9401> \\
+Jules VENTURA <https://github.com/Juleslgc>
+
+.SH SEE ALSO
+bash(1), sh(1), execve(2), getenv(3), fork(2)
