@@ -22,5 +22,4 @@ void arg(char *line, char **argv)
 			token = strtok(NULL, " ");
 		}
 		argv[i] = NULL;
-		free(token);
 }
