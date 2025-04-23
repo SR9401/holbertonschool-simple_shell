@@ -14,12 +14,13 @@ void arg(char *line, char **argv)
 	char *token;
 
 	line[strcspn(line, "\n")] = 0;
-		token = strtok(line, " ");
+	token = strtok(line, " ");
 
-		for (; token != NULL && i < 10 ;)
-		{
-			argv[i++] = token;
-			token = strtok(NULL, " ");
-		}
-		argv[i] = NULL;
+	for (; token != NULL && i < 10 ;)
+	{
+		argv[i++] = token;
+		token = strtok(NULL, " ");
+	}
+	argv[i] = NULL;
+
 }

@@ -59,7 +59,7 @@ int main(int ac, char **av)
 			print_env();
 			continue;
 		}
-		get_path(line, argv, name);
+		get_path(argv[0], argv, name);
 	}
 	free(line);
 	return (0);
