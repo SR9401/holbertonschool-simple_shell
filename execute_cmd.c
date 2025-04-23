@@ -33,5 +33,11 @@ void execute_command(char **argv, const char *full_path)
 	else
 	{
 		wait(&status);
+
+		if (WIFEXITED(status))
+		{
+			int ret = WEXITSTATUS(status);
+			(void)ret;
+		}
 	}
 }
