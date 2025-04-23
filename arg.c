@@ -16,7 +16,7 @@ void arg(char *line, char **argv)
 	line[strcspn(line, "\n")] = 0;
 	token = strtok(line, " ");
 
-	for (; token != NULL && i < 10 ;)
+	for (; token != NULL ;)
 	{
 		argv[i++] = token;
 		token = strtok(NULL, " ");
